@@ -1,0 +1,15 @@
+# eu-south-1
+# "WAF SaaS Profile"
+config:
+  # profile: "saas-milan"
+  # region: "eu-south-1"
+  profile: "saas-milan"
+  region: "eu-south-1"
+
+assets:
+  - name: "demo5-in-space.wafaas.klaud.online"
+    domain: "demo5-in-space.wafaas.klaud.online"
+    host: "httpbin.org"
+    upstream: "https://httpbin.org"
+    cert_pem: "_.wafaas.klaud.online.crt"
+    cert_key: "_.wafaas.klaud.online.key"
