@@ -1,5 +1,7 @@
 # Declarative creation or WAFaaS assets
 
+This scenario was validated in Github Codespace. Consider opening repo in Codespace and running the instructions there (or in local devcontainer).
+
 ### Dependencies
 
 ```shell
@@ -80,7 +82,7 @@ For example, the profile type is `CloudGuard WAF SaaS Profile` name is `saas-sto
 |--------------|---------------------|
 | Stockholm    | eu-north-1          |
 | Milan        | eu-south-1          |
-| Ireland      | eu-west-1           |
+| Ireland      |               |
 
 ![alt text](./img/wafaas-profile.png)
 
@@ -129,6 +131,23 @@ Assets are created per YAML declaration in `assets.yaml` file.
 Uploaded certificates are used for the assets and can be confirmed in the UI under the profile.
 
 ![alt text](img/domain-cert-uploaded.png)
+
+
+### Validate services created
+
+Assume that Profile instructions said for `west.klaud.online` to create CNAME record `west.klaud.online` pointing to `xxx`.
+
+```shell
+# resolve one of frontend IPs for WAF service
+dig +short 
+
+```
+
+Note: script gives summary of WAF service CNAME similar to:
+
+```shell
+
+```
 
 ### Troubleshooting
 

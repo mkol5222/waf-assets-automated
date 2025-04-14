@@ -7,3 +7,4 @@ server.key
 ca.crt
 ca.key
 ca.srl
+assets.yaml.bak

@@ -1,19 +1,14 @@
 
 config:
-  profile: "saas-stockholm"
-  region: "eu-north-1"
+  profile: "saas-ireland"
+  region: "eu-west-1"
 
 assets:
-  - name: "httpbin.example.com" # asset name
-    domain: "httpbin.example.com" # front end url without https:// prefix
+  - name: "west.example.com" # asset name
+    domain: "west.example.com" # front end url without https:// prefix
     host: "httpbin.org" # host header sent to upstream
     upstream: "https://httpbin.org"
     cert_pem: "server.crt" # certificate file location
     cert_key: "server.key" # key file location
 
-  - name: "ifconfig.example.com" # asset name
-    domain: "ifconfig.example.com" # front end url without https:// prefix
-    host: "ifconfig.me" # host header sent to upstream
-    upstream: "https://ifconfig.me"
-    cert_pem: "server.crt" # certificate file location
-    cert_key: "server.key" # key file location
+
