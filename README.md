@@ -54,6 +54,8 @@ dotenvx run -- env | grep ^WAF
 
 ### Test certificate
 
+> **<span style="color:red;">SELF-SIGNED CERTIFICATES ARE NOT WORKING WITH WAFaaS.</span>** Documentation will be updated soon to reflect this limitation.
+
 Optional: lets create self signed wildcard certificates for the demo.
 
 ```shell
