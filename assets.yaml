@@ -4,11 +4,11 @@ config:
   region: "eu-west-1"
 
 assets:
-  - name: "west.example.com" # asset name
-    domain: "west.example.com" # front end url without https:// prefix
+  - name: "west2.wafaas.klaud.online" # asset name
+    domain: "west2.wafaas.klaud.online" # front end url without https:// prefix
     host: "httpbin.org" # host header sent to upstream
     upstream: "https://httpbin.org"
-    cert_pem: "server.crt" # certificate file location
-    cert_key: "server.key" # key file location
+    cert_pem: "_.wafaas.klaud.online.crt" # certificate file location
+    cert_key: "_.wafaas.klaud.online.key" # key file location
 
 
