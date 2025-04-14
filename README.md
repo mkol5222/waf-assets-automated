@@ -144,18 +144,33 @@ Uploaded certificates are used for the assets and can be confirmed in the UI und
 
 ### Validate services created
 
-Assume that Profile instructions said for `west.klaud.online` to create CNAME record `west.klaud.online` pointing to `xxx`.
+Assume that Profile instructions said for `west2.wafaas.klaud.online` to create CNAME record `west2.wafaas.klaud.online` pointing to `west2wafaasklaudonline.5c4121f6-2e3a-4672-b593-d94e06c65c73.3f10f27ca6ff.i2.checkpoint.com`.
 
 ```shell
+# need dig cli tool:
+sudo apt update; sudo apt install dnsutils -y
 # resolve one of frontend IPs for WAF service
-dig +short 
+dig +short west2wafaasklaudonline.5c4121f6-2e3a-4672-b593-d94e06c65c73.3f10f27ca6ff.i2.checkpoint.com. A | tail -1
+# save IP for later
+WAFIP=$(dig +short west2wafaasklaudonline.5c4121f6-2e3a-4672-b593-d94e06c65c73.3f10f27ca6ff.i2.checkpoint.com. A | tail -1)
+
+# tell curl to go via WAF service
+curl https://west2.wafaas.klaud.online/ --resolve west2.wafaas.klaud.online:443:$WAFIP
+
+# and WAF incident
+curl 'https://west2.wafaas.klaud.online/?q=UNION+13=13--' --resolve west2.wafaas.klaud.online:443:$WAFIP
+# check logs as we are in Detect/Learn mode
 
 ```
 
 Note: script gives summary of WAF service CNAME similar to:
 
 ```shell
+# execute deployment - all is done, so we check only state of Deployment
+dotenvx run -- deno run -A deploy-waf-with-own-cert.ts
 
+# expected DNS records:
+# ./cfdns.ts create -n west2.wafaas.klaud.online. -c west2wafaasklaudonline.5c4121f6-2e3a-4672-b593-d94e06c65c73.3f10f27ca6ff.i2.checkpoint.com. -t CNAME
 ```
 
 ### Troubleshooting
