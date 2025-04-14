@@ -128,6 +128,8 @@ dotenvx run -- deno run -A deploy-waf-with-own-cert.ts
 Assets are created per YAML declaration in `assets.yaml` file.
 Uploaded certificates are used for the assets and can be confirmed in the UI under the profile.
 
+![alt text](img/domain-cert-uploaded.png)
+
 ### Troubleshooting
 
 - so far this is PoC/concept and if you want to run again for same list of assets, you might want to delete them first, publish&enforce and start again
