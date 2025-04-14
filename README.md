@@ -2,6 +2,13 @@
 
 This scenario was validated in Github Codespace. Consider opening repo in Codespace and running the instructions there (or in local devcontainer).
 
+
+### ⚠️ Important Notes
+
+> **NOTE:** This is a PoC/concept and not production-ready code. It has not been tested for all edge cases and should be used with caution.
+
+> **<span style="color:red;">SELF-SIGNED CERTIFICATES ARE NOT WORKING WITH WAFaaS.</span>** Documentation will be updated soon to reflect this limitation.
+
 ### Dependencies
 
 ```shell
